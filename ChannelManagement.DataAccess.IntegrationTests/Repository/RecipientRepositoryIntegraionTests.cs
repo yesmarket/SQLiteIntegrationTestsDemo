@@ -13,6 +13,7 @@ namespace ChannelManagement.DataAccess.IntegrationTests.Repository
 {
     public class RecipientRepositoryIntegraionTests : IUseFixture<NHibernateFixture>
     {
+        #region Boring stuff
         private readonly ISessionFactory _sessionFactory;
         private readonly RecipientRepository _sut;
         private ISession _session;
@@ -28,7 +29,8 @@ namespace ChannelManagement.DataAccess.IntegrationTests.Repository
         {
             _sessionFactory = Substitute.For<ISessionFactory>();
             _sut = new RecipientRepository(_sessionFactory);
-        }
+        } 
+        #endregion
 
         [Fact]
         public void GetRecipientsByStatus_MatchingSubset_ReturnsCorrectNumberOfResults()

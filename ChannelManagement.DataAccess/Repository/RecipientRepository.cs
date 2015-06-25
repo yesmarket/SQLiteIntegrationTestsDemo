@@ -10,10 +10,12 @@ namespace ChannelManagement.DataAccess.Repository
 {
     public class RecipientRepository : Repository<Recipient>, IRecipientRepository
     {
+        #region ctor
         public RecipientRepository(ISessionFactory sessionFactory)
             : base(sessionFactory)
         {
-        }
+        } 
+        #endregion
 
         public IEnumerable<Recipient> GetRecipientsByStatus(Status status)
         {
